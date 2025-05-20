@@ -4,28 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Study Notes</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>📘 Study Notes Hub</h1>
-    <input type="text" id="searchInput" placeholder="Search notes...">
-  </header>
+  <div class="wrapper">
+    <header>
+      <h1>📘 <u>Study Notes Hub</u></h1>
+      <h3>Welcome to the Study Notes Hub! Here you can find notes on various subjects.</h3>
+      <input type="text" id="searchInput" placeholder="🔍 Search notes...">
+    </header>
 
-  <main>
-    <section id="filters">
-      <label for="subjectSelect">Filter by Subject:</label>
-      <select id="subjectSelect">
-        <option value="All">All</option>
-        <option value="Math">Math</option>
-        <option value="Physics">Physics</option>
-        <option value="CS">Computer Science</option>
-      </select>
-    </section>
+    <main>
+      <section id="filters">
+        <label for="sortSelect">🔄 Sort by:</label>
+        <select id="sortSelect">
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+          <option value="az">A-Z</option>
+          <option value="za">Z-A</option>
+        </select>
+        
+        <label for="subjectSelect">📚 Filter by:</label>
+        <select id="subjectSelect">
+          <option value="All">All Subjects</option>
+          <option value="ECE">ECE</option>
+          <option value="IT">IT</option>
+          <option value="CSE">CSE</option>
+          <option value="Maths">MATHS</option>
+        </select>
+      </section>
 
-    <section id="notesContainer"></section>
-  </main>
+      <section id="notesContainer"></section>
 
+      <!-- Note Detail Popup -->
+      <div id="notePopup" class="popup hidden">
+        <div class="popup-content">
+          <span id="popupClose">&times;</span>
+          <h2 id="popupTitle"></h2>
+          <h4 id="popupSubject"></h4>
+          <p id="popupContent"></p>
+        </div>
+      </div>
+    </main>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
